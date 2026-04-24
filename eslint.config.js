@@ -1,5 +1,6 @@
 // @ts-check
-import eslintLove from 'eslint-config-love'
+import js from '@eslint/js'
+import tseslint from 'typescript-eslint'
 import jsdoc from 'eslint-plugin-jsdoc'
 import eslintPrettier from 'eslint-plugin-prettier'
 import globals from 'globals'
@@ -9,19 +10,14 @@ export default [
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   eslintPrettier,
   jsdoc.configs['flat/recommended'],
-  {
-    languageOptions: { ...globals },
-    files: ['**/*.{js,mjs}'],
-    ...eslintLove,
-    rules: {
-      '@typescript-eslint/triple-slash-reference': 'off',
-    }
-  },
+  js.configs.recommended,
+  tseslint.configs.recommended,
   {
     parserOptions: {
       parser: '@typescript-eslint/parser'
     },
     rules: {
+      '@typescript-eslint/triple-slash-reference': 'off',
       semi: ['warn', 'single']
     }
   }
