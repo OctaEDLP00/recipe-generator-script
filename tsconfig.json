@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
+    "strictNullChecks": true,
     "types": ["node"],
-    "allowJs": true,
     "checkJs": true,
     "strict": true,
     "alwaysStrict": true,
-    "module": "nodenext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "target": "esnext",
     "paths": {
-      "~/*": [ "./src/*" ]
+      "~/*": ["./src/*"]
     }
   },
-  "include": ["./src/*"],
+  "include": ["./src/**/*"],
   "exclude": ["./src/jsdoc.d.mjs"]
 }

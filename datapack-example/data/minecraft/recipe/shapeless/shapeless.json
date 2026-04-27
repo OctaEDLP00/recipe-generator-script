@@ -1,50 +1,15 @@
 {
   "type": "crafting_shapeless",
-  "ingredients": [
-    "#minecraft:logs"
-  ],
+  "ingredients": ["#minecraft:logs"],
   "group": "",
-  "category": "misc",
+  "category": "building",
   "result": {
     "id": "stick",
     "components": {
-      "minecraft:additional_trade_cost": 0,
-      "minecraft:attack_range": {
-        "hitbox_margin": 0,
-        "max_creative_reach": 0,
-        "max_reach": 0,
-        "min_creative_reach": 0,
-        "min_reach": 0,
-        "mob_factor": 0
-      },
-      "minecraft:attribute_modifiers": [
-        {
-          "amount": 0,
-          "id": "minecraft:",
-          "operation": "add_multiplied_total",
-          "type": "minecraft:armor",
-          "display": {
-            "type": ""
-          },
-          "slot": "any"
-        }
-      ],
-      "minecraft:axolotl/variant": "wild",
-      "minecraft:banner_patterns": [
-        {
-          "color": "cyan",
-          "pattern": ""
-        },
-        {
-          "color": "",
-          "pattern": ""
-        }
-      ],
-      "minecraft:base_color": "",
       "minecraft:bees": [
         {
           "entity_data": {
-            "id": ""
+            "id": "acacia_boat"
           },
           "min_ticks_in_hive": 0,
           "ticks_in_hive": 0
@@ -53,16 +18,21 @@
       "minecraft:block_entity_data": {
         "id": "minecraft:banner"
       },
-      "minecraft:block_state": {
-
-      },
+      "minecraft:block_state": {},
       "minecraft:blocks_attacks": {
         "block_delay_seconds": 0,
-        "block_sound": "",
-        "bypassed_by": "",
-        "damage_reductions": [ ],
+        "block_sound": "ambient.basalt_deltas.additions",
+        "bypassed_by": "#always_hurts_ender_dragons",
+        "damage_reductions": [
+          {
+            "base": 0,
+            "factor": 0,
+            "horizontal_blocking_angle": 1,
+            "type": "#always_hurts_ender_dragons"
+          }
+        ],
         "disable_cooldown_scale": 0,
-        "disabled_sound": "",
+        "disabled_sound": "ambient.basalt_deltas.additions",
         "item_damage": {
           "base": 0,
           "factor": 0,
@@ -70,32 +40,51 @@
         }
       },
       "minecraft:break_sound": {
-        "sound_id": ""
+        "sound_id": "",
+        "range": 0
       },
-      "minecraft:bucket_entity_data": { },
-      "minecraft:bundle_contents": [ ],
-      "minecraft:can_break": { },
-      "minecraft:can_place_on": { },
-      "minecraft:cat/collar": "",
+      "minecraft:bucket_entity_data": {
+        "Glowing": true,
+        "Health": 0,
+        "HuntingCooldown": 0,
+        "Invulnerable": true,
+        "NoAI": true,
+        "NoGravity": true,
+        "Silent": true
+      },
+      "minecraft:bundle_contents": [],
+      "minecraft:can_break": {
+        "blocks": "#logs",
+        "components": {},
+        "nbt": [],
+        "predicates": {},
+        "state": {}
+      },
+      "minecraft:can_place_on": {
+        "blocks": "#logs",
+        "components": {},
+        "nbt": [],
+        "predicates": {},
+        "state": {}
+      },
+      "minecraft:cat/collar": "cyan",
       "minecraft:cat/sound_variant": "",
-      "minecraft:cat/variant": "all_black",
-      "minecraft:charged_projectiles": [ ],
+      "minecraft:cat/variant": "",
+      "minecraft:charged_projectiles": [],
       "minecraft:chicken/sound_variant": "",
       "minecraft:chicken/variant": "",
-      "minecraft:consumable": { },
-      "minecraft:container": [ ],
-      "minecraft:container_loot": { },
+      "minecraft:consumable": {},
+      "minecraft:container": [],
+      "minecraft:container_loot": {},
       "minecraft:cow/sound_variant": "",
       "minecraft:cow/variant": "",
-      "minecraft:creative_slot_lock": { },
-      "minecraft:custom_data": { },
-      "minecraft:custom_model_data": { },
-      "minecraft:custom_name": { },
+      "minecraft:creative_slot_lock": {},
+      "minecraft:custom_data": {},
+      "minecraft:custom_model_data": {},
+      "minecraft:custom_name": {},
       "minecraft:damage": 0,
       "minecraft:damage_resistant": {
-        "types": [
-          "arrow"
-        ]
+        "types": ["arrow"]
       },
       "minecraft:damage_type": {
         "message_id": "",
@@ -111,24 +100,24 @@
           }
         ]
       },
-      "minecraft:debug_stick_state": { },
-      "minecraft:dye": "",
-      "minecraft:dyed_color": [ 0, 0, 0 ],
+      "minecraft:debug_stick_state": {},
+      "minecraft:dye": "cyan",
+      "minecraft:dyed_color": [],
       "minecraft:enchantable": {
         "value": 1
       },
       "minecraft:enchantment_glint_override": true,
-      "minecraft:enchantments": { },
-      "minecraft:entity_data": { },
-      "minecraft:equippable": { },
-      "minecraft:firework_explosion": { },
-      "minecraft:fireworks": { },
-      "minecraft:food": { },
-      "minecraft:fox/variant": { },
+      "minecraft:enchantments": {},
+      "minecraft:entity_data": {},
+      "minecraft:equippable": {},
+      "minecraft:firework_explosion": {},
+      "minecraft:fireworks": {},
+      "minecraft:food": {},
+      "minecraft:fox/variant": {},
       "minecraft:frog/variant": "",
-      "minecraft:glider": { },
+      "minecraft:glider": {},
       "minecraft:horse/variant": "",
-      "minecraft:instrument": { },
+      "minecraft:instrument": {},
       "minecraft:intangible_projectile": {},
       "minecraft:item_model": "",
       "minecraft:item_name": {},
@@ -182,13 +171,16 @@
       "minecraft:use_effects": {},
       "minecraft:use_remainder": {},
       "minecraft:villager/variant": "",
-      "minecraft:weapon": {},
+      "minecraft:weapon": {
+        "disable_blocking_for_seconds": 0,
+        "item_damage_per_attack": 0
+      },
       "minecraft:wolf/collar": "",
       "minecraft:wolf/sound_variant": "",
       "minecraft:wolf/variant": "",
       "minecraft:writable_book_content": {},
       "minecraft:written_book_content": {},
-      "minecraft:zombie_nautilus/variant": ""
+      "minecraft:zombie_nautilus/variant": {}
     },
     "count": 1
   }

@@ -1,0 +1,19 @@
+{
+  "type": "crafting_special_firework_star",
+  "fuel": "",
+  "dye": "",
+  "shapes": {
+    "burst": "",
+    "creeper": "",
+    "large_ball": "",
+    "small_ball": "",
+    "star": ""
+  },
+  "trail": "",
+  "twinkle": "",
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  }
+}

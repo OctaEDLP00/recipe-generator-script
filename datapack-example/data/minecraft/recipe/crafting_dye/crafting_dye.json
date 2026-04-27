@@ -1,0 +1,13 @@
+{
+  "type": "crafting_dye",
+  "target": "",
+  "dye": "",
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  },
+  "category": "building",
+  "group": "",
+  "show_notification": false
+}

@@ -1,0 +1,14 @@
+{
+  "type": "crafting_special_bookcloning",
+  "material": "",
+  "source": "",
+  "allowed_generations": {
+    "min": 0,
+    "max": 2
+  },
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  }
+}

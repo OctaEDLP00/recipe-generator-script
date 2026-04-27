@@ -1,0 +1,10 @@
+{
+  "type": "crafting_special_firework_star_fade",
+  "target": "",
+  "dye": "",
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  }
+}

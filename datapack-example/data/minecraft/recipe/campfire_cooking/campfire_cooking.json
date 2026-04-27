@@ -1,0 +1,14 @@
+{
+  "type": "campfire_cooking",
+  "ingredient": [""],
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  },
+  "category": "",
+  "cookingtime": 0,
+  "experience": 0,
+  "group": "",
+  "show_notification": false
+}

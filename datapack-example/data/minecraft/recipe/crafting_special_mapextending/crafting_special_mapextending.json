@@ -1,0 +1,10 @@
+{
+  "type": "crafting_special_mapextending",
+  "map": "",
+  "material": "",
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  }
+}

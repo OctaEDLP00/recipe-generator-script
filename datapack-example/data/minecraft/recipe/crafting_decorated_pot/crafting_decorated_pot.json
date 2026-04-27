@@ -1,0 +1,12 @@
+{
+  "type": "crafting_decorated_pot",
+  "back": "",
+  "front": "",
+  "left": "",
+  "right": "",
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  }
+}

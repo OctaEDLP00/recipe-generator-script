@@ -1,0 +1,10 @@
+{
+  "type": "stonecutting",
+  "ingredient": ,
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  },
+  "show_notification": false
+}

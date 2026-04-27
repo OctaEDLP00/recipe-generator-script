@@ -1,0 +1,13 @@
+{
+  "type": "crafting_imbue",
+  "material": "",
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  },
+  "source": "",
+  "category": "",
+  "group": "",
+  "show_notification": false
+}

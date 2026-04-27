@@ -1,0 +1,11 @@
+{
+  "type": "crafting_special_firework_rocket",
+  "fuel": "",
+  "shell": "",
+  "star": "",
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "smoking",
+  "ingredient": [""],
+  "result": {
+    "id": ""
+  },
+  "category": "",
+  "group": "",
+  "cookingtime": 0,
+  "experience": 1,
+  "show_notification": false
+}

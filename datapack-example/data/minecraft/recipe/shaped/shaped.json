@@ -1,0 +1,15 @@
+{
+  "type": "crafting_shaped",
+  "key": {
+    "#": ""
+  },
+  "pattern": ["# #", "###"],
+  "result": {
+    "id": "",
+    "components": {},
+    "count": 1
+  },
+  "category": "",
+  "group": "",
+  "show_notification": false
+}
