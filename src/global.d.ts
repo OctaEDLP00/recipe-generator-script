@@ -8,6 +8,273 @@ import {
 } from './const/index'
 
 declare global {
+  /** Basic representation of a person in package metadata. */
+  export interface Person {
+    name: string
+    url?: string
+    email?: string
+  }
+
+  /** List of common SPDX licenses with a string fallback. */
+  export type License =
+    | 'AGPL-3.0-only'
+    | 'Apache-2.0'
+    | 'BSD-2-Clause'
+    | 'BSD-3-Clause'
+    | 'BSL-1.0'
+    | 'CC0-1.0'
+    | 'CDDL-1.0'
+    | 'CDDL-1.1'
+    | 'EPL-1.0'
+    | 'EPL-2.0'
+    | 'GPL-2.0-only'
+    | 'GPL-3.0-only'
+    | 'ISC'
+    | 'LGPL-2.0-only'
+    | 'LGPL-2.1-only'
+    | 'LGPL-2.1-or-later'
+    | 'LGPL-3.0-only'
+    | 'LGPL-3.0-or-later'
+    | 'MIT'
+    | 'MPL-2.0'
+    | 'MS-PL'
+    | 'UNLICENSED'
+    | (string & {}) // The & {} trick allows autocomplete for literals while accepting any string
+
+  /** Metadata for legacy license formats. */
+  export interface DeprecatedLicense {
+    type?: License
+    url?: string
+  }
+
+  /** Methods of funding for the package. */
+  export interface FundingWay {
+    url: string
+    type?: string
+  }
+
+  /** Directories structure for the package. */
+  export interface Directories {
+    bin?: string
+    doc?: string
+    example?: string
+    lib?: string
+    man?: string
+    test?: string
+  }
+
+  /** Distribution metadata for the registry. */
+  export interface Dist {
+    shasum?: string
+    tarball?: string
+  }
+
+  /** Execution environment constraints. */
+  export interface ExecutionEnv {
+    nodeVersion?: string
+  }
+
+  /** Configuration for ESNext compatibility. */
+  export interface ESNextConfig {
+    main?: string
+    browser?: string
+    [key: string]: string | undefined
+  }
+
+  /** Dependency requirement for development engines. */
+  export interface DevEngineDependency {
+    name: string
+    version?: string
+    onFail?: 'ignore' | 'warn' | 'error' | 'download'
+  }
+
+  /** Keys for standard npm scripts. */
+  export type ScriptsKeys =
+    | 'install'
+    | 'lint'
+    | 'postinstall'
+    | 'postpack'
+    | 'postpublish'
+    | 'postrestart'
+    | 'poststart'
+    | 'poststop'
+    | 'posttest'
+    | 'postuninstall'
+    | 'postversion'
+    | 'preinstall'
+    | 'prepack'
+    | 'prepare'
+    | 'prepublish'
+    | 'prepublishOnly'
+    | 'prerestart'
+    | 'prestart'
+    | 'prestop'
+    | 'pretest'
+    | 'preuninstall'
+    | 'preversion'
+    | 'publish'
+    | 'restart'
+    | 'serve'
+    | 'start'
+    | 'stop'
+    | 'test'
+    | 'uninstall'
+    | 'version'
+
+  /** Detailed repository metadata. */
+  export interface RepositoryObject {
+    type?: string
+    url: string
+    directory?: string
+  }
+
+  export type Repository = RepositoryObject | string
+
+  /** Issue tracking information. */
+  export type Bugs = { url?: string; email?: string } | string
+
+  /** SemVer version patterns. */
+  export type VersionDependencies =
+    | `${number}.${number}.${number}`
+    | `^${number}.${number}.${number}`
+    | `~${number}.${number}.${number}`
+    | (string & {})
+
+  /** Generic dependency mapping. */
+  export interface Dependency {
+    [packageName: string]: VersionDependencies
+  }
+
+  export type DevDependency = Dependency
+  export type OptionalDependency = Dependency
+  export type PeerDependency = Dependency
+
+  /** Metadata for peer dependencies. */
+  export interface PeerDependencyMeta {
+    [packageName: string]: { optional?: boolean }
+  }
+
+  /** Rules for peer dependency resolution. */
+  export interface PeerDependencyRules {
+    ignoreMissing?: Array<string>
+    allowedVersions?: { [key: string]: string }
+    allowAny?: Array<string>
+  }
+
+  /** Update logic configuration. */
+  export interface UpdateConfig {
+    ignoreDependencies?: Array<string>
+  }
+
+  /** Security audit exceptions. */
+  export interface AuditConfig {
+    ignoreCves?: Array<string>
+    ignoreGhsas?: Array<string>
+  }
+
+  /** Hardware and OS constraints for pnpm. */
+  export interface SupportedArchitectures {
+    os?: Array<string>
+    cpu?: Array<string>
+    libc?: Array<string>
+  }
+
+  /** Pnpm specific configuration in package.json. */
+  export interface PnpmConfig {
+    overrides?: { [key: string]: any }
+    packageExtensions?: { [key: string]: any }
+    allowedDeprecatedVersions?: { [key: string]: { [key: string]: string } }
+    patchedDependencies?: { [key: string]: { [key: string]: string } }
+    allowNonAppliedPatches?: boolean
+    allowUnusedPatches?: boolean
+    configDependencies?: { [key: string]: string }
+    neverBuiltDependencies?: Array<string>
+    onlyBuiltDependencies?: Array<string>
+    onlyBuiltDependenciesFile?: string
+    ignoredBuiltDependencies?: Array<string>
+    requiredScripts?: Array<string>
+    peerDependencyRules?: PeerDependencyRules
+    updateConfig?: UpdateConfig
+    auditConfig?: AuditConfig
+    supportedArchitectures?: SupportedArchitectures
+    ignoredOptionalDependencies?: Array<string>
+    executionEnv?: ExecutionEnv
+  }
+
+  /** Stackblitz environment configuration. */
+  export interface StackblitzConfig {
+    installDependencies?: boolean
+    startCommand?: string | boolean
+    compileTrigger?: 'auto' | 'keystroke' | 'save'
+    env?: { [key: string]: string }
+  }
+
+  /** Version and Name formats using Template Literals. */
+  export type Version = `${number}.${number}.${number}`
+  export type FormatName = `@${string}/${string}`
+
+  /** Complete representation of a package.json file. */
+  export interface PackageJson {
+    name?: string | FormatName
+    version?: Version
+    description?: string
+    keywords?: Array<string>
+    homepage?: string
+    bugs?: Bugs
+    license?: License
+    licenses?: Array<DeprecatedLicense>
+    author?: Person
+    contributors?: Array<Person>
+    maintainers?: Array<Person>
+    files?: Array<string>
+    main?: string
+    bin?: string | { [key: string]: string }
+    type?: 'commonjs' | 'module'
+    types?: string
+    typings?: string
+    typesVersions?: { [key: string]: Array<string> }
+    man?: string | Array<string>
+    directories?: Directories
+    repository?: Repository
+    funding?: FundingWay | string | Array<FundingWay | string>
+    scripts?: { [key in ScriptsKeys]?: string } & { [key: string]: string | undefined }
+    config?: { [key: string]: any }
+    dependencies?: Dependency
+    devDependencies?: DevDependency
+    optionalDependencies?: OptionalDependency
+    peerDependencies?: PeerDependency
+    peerDependenciesMeta?: PeerDependencyMeta
+    bundleDependencies?: Array<string> | boolean
+    bundledDependencies?: Array<string> | boolean
+    resolutions?: { [key: string]: any }
+    overrides?: { [key: string]: any }
+    packageManager?: string
+    engines?: { [key: string]: string }
+    volta?: { [key: string]: string }
+    engineStrict?: boolean
+    os?: Array<string>
+    cpu?: Array<string>
+    devEngines?: { [key: string]: DevEngineDependency }
+    preferGlobal?: boolean | 'true' | 'false'
+    private?: boolean | 'true' | 'false'
+    publishConfig?: { [key: string]: any }
+    dist?: Dist
+    readme?: string
+    module?: string
+    esnext?: string | ESNextConfig
+    workspaces?: Array<string> | { packages?: Array<string>; nohoist?: Array<string> }
+    jspm?: PackageJson
+    eslintConfig?: any
+    prettier?: any
+    stylelint?: any
+    ava?: any
+    release?: any
+    jscpd?: any
+    pnpm?: PnpmConfig
+    stackblitz?: StackblitzConfig
+    [key: `_${string}`]: any // Matches the "_key" pattern mentioned
+  }
+
   export namespace UtilityTypes {
     /** Internal helper to build the tuple. Uses a recursive approach to reach the desired length. */
     export type BuildTuple<T, N extends number, Current extends T[] = []> =
