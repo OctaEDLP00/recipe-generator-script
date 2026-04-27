@@ -1,20 +1,42 @@
 #!/usr/bin/env node
 import { parseArgs, type ParseArgsOptionsConfig } from 'node:util'
 import { argv } from 'node:process'
+import meow from 'meow'
+// import * as Project from './src/index.js'
 
 const args = argv.slice(2)
 
-const options = {
-  // non optional options if not encountered options the cli crash (exit(-1))
-  template: { type: 'string', short: 't' },
-  out: { type: 'string', short: 'o', default: import.meta.dirname },
-  // optional options
-  dry: { type: 'boolean', default: false },
-  // global options
-  help: { type: 'boolean', default: false, short: 'h' },
-  version: { type: 'boolean', default: false, short: 'v' },
-} satisfies ParseArgsOptionsConfig
+const cli = meow(
+  `
+  Usage
+    recipe-generator <name> [options]
 
-const { values, positionals } = parseArgs({ args, options })
+  Options
+    --help -h
+    --version -v      Package manager to use (npm, pnpm, yarn, bun, deno)
+    --template, -t     Valid templates (vanilla, phaser, lit)
+    --out, -o  Enable TypeScript support
 
-console.dir(values, positionals)
+  Examples
+    recipe-generator my-app --template phaser --install
+    recipe-generator my-app -t lit -pm pnpm -ts
+    recipe-generator my-app -t vanilla -g
+`,
+  {
+    importMeta: import.meta,
+    flags: {
+      help: { type: 'boolean', shortFlag: 'h' },
+      version: { type: 'boolean', shortFlag: 'v' },
+      template: { type: 'string', shortFlag: 't', default: 'all' },
+      out: { type: 'string', shortFlag: 'o', default: import.meta.dirname },
+      dry: { type: 'boolean' },
+    },
+  }
+)
+
+function run() {
+  // const { input, flags } = cli
+  console.dir(cli)
+}
+
+run()

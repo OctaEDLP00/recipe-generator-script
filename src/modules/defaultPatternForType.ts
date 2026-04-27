@@ -1,15 +1,18 @@
-import type { PatternRecipe } from "../types.d.ts"
-
 /**
- * Defaults by type
- * @param {string} type
- * @returns {import('../jsdoc.d.mjs').PatternRecipe}
+ * @param {Minecraft.} type
+ * @returns {Minecraft.PatternRecipe}
  */
-export function defaultPatternForType(type: string): PatternRecipe {
+export function defaultPatternForType(type: Minecraft.RecipeType): Minecraft.PatternRecipe {
   switch (type) {
-    case "stairs": return [ "X  ", "XX ", "XXX" ]
-    case "slab": return [ "XXX" ]
-    case "trapdoor": return [ "XXX", "XXX" ]
-    default:  return [ "XXX" ]
+    case 'stairs':
+      return ['#  ', '## ', '###']
+    case 'slab':
+      return ['###']
+    case 'trapdoor':
+      return ['###', '###']
+    case 'stick': // to me like caramel
+      return ['#', '#']
+    default:
+      return ['', '', '']
   }
 }

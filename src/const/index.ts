@@ -1,73 +1,58 @@
-/**
- * @constant WOOD_TYPE
- */
-export const WOOD_TYPE = {
-  ACACIA: "acacia",
-  BAMBOO: "bamboo",
-  BIRCH: "birch",
-  CHERRY: "cherry",
-  CRIMSON: "crimson",
-  DARK_OAK: "dark_oak",
-  JUNGLE: "jungle",
-  MANGROVE: "mangrove",
-  OAK: "oak",
-  PALE_OAK: "pale_oak",
-  SPRUCE: "spruce",
-  WARPED: "warped"
+const WOOD_TYPE = {
+  ACACIA: 'acacia',
+  BAMBOO: 'bamboo',
+  BIRCH: 'birch',
+  CHERRY: 'cherry',
+  CRIMSON: 'crimson',
+  DARK_OAK: 'dark_oak',
+  JUNGLE: 'jungle',
+  MANGROVE: 'mangrove',
+  OAK: 'oak',
+  PALE_OAK: 'pale_oak',
+  SPRUCE: 'spruce',
+  WARPED: 'warped',
 } as const
 
-/**
- * @constant SLOT_TYPE
- */
-export const SLOT_TYPE = {
-  ANY: "any",
-  MAINHAND: "mainhand",
-  OFFHAND: "offhand",
-  HAND: "hand",
-  ARMOR: "armor",
-  SADDLE: "saddle",
-  HEAD: "head",
-  BODY: "body",
-  CHEST: "chest",
-  FEET: "feet",
-  LEGS: "legs"
+const SLOT_TYPE = {
+  ANY: 'any',
+  MAINHAND: 'mainhand',
+  OFFHAND: 'offhand',
+  HAND: 'hand',
+  ARMOR: 'armor',
+  SADDLE: 'saddle',
+  HEAD: 'head',
+  BODY: 'body',
+  CHEST: 'chest',
+  FEET: 'feet',
+  LEGS: 'legs',
 } as const
 
-/**
- * @constant OPERATION_TYPE
- */
-export const OPERATION_TYPE = {
-  ADD_MULTIPLE_BASE: "add_multiplied_base",
-  ADD_MULTIPLE_TOTAL: "add_multiplied_total",
-  ADD_VALUE: "add_value"
+const OPERATION_TYPE = {
+  ADD_MULTIPLE_BASE: 'add_multiplied_base',
+  ADD_MULTIPLE_TOTAL: 'add_multiplied_total',
+  ADD_VALUE: 'add_value',
 } as const
 
-/**
- * @constant COLOR_TYPE
- */
-export const COLOR_TYPE = {
-  BLACK: "black",
-  BLUE: "blue",
-  BROWN: "brown",
-  CYAN: "cyan",
-  GRAY: "gray",
-  GREEN: "green",
-  LIGHT_BLUE: "light_blue",
-  LIGHT_GRAY: "light_gray",
-  LIME: "lime",
-  MAGENTA: "magenta",
-  ORANGE: "orange",
-  PINK: "pink",
-  PURPLE: "purple",
-  RED: "red",
-  WHITE: "white",
-  YELLOW: "yellow"
+const COLOR_TYPE = {
+  BLACK: 'black',
+  BLUE: 'blue',
+  BROWN: 'brown',
+  CYAN: 'cyan',
+  GRAY: 'gray',
+  GREEN: 'green',
+  LIGHT_BLUE: 'light_blue',
+  LIGHT_GRAY: 'light_gray',
+  LIME: 'lime',
+  MAGENTA: 'magenta',
+  ORANGE: 'orange',
+  PINK: 'pink',
+  PURPLE: 'purple',
+  RED: 'red',
+  WHITE: 'white',
+  YELLOW: 'yellow',
 } as const
 
-/**
- * @constant BANNER_PATTERNS_TYPE
- */
-export const BANNER_PATTERNS_TYPE = {
+const BANNER_PATTERNS_TYPE = {
   BASE: 'base',
   BORDER: 'border',
   BRICKS: 'bricks',
@@ -112,18 +97,15 @@ export const BANNER_PATTERNS_TYPE = {
   TRIANGLES_TOP: 'triangles_top',
 } as const
 
-/**
- * @constant AXOLOTL_VARIANT_TYPE
- */
-export const AXOLOTL_VARIANT_TYPE = {
-  LUCY: "lucy",
-  WILD: "wild",
-  BLUE: "blue",
-  CYAN: "cyan",
-  GOLD: "gold"
+const AXOLOTL_VARIANT_TYPE = {
+  LUCY: 'lucy',
+  WILD: 'wild',
+  BLUE: 'blue',
+  CYAN: 'cyan',
+  GOLD: 'gold',
 } as const
 
-export const CAT_VARIANT_TYPE = {
+const CAT_VARIANT_TYPE = {
   ALL_BLACK: 'all_black',
   BLACK: 'black',
   BRITISH_SHORTHAIR: 'british_shorthair',
@@ -134,7 +116,27 @@ export const CAT_VARIANT_TYPE = {
   RED: 'red',
   SIAMESE: 'siamese',
   TABBY: 'tabby',
-  WHITE: 'white'
+  WHITE: 'white',
 } as const
 
-// export const  = { } as const
+// const  = { } as const
+
+export {
+  CAT_VARIANT_TYPE,
+  AXOLOTL_VARIANT_TYPE,
+  BANNER_PATTERNS_TYPE,
+  COLOR_TYPE,
+  OPERATION_TYPE,
+  SLOT_TYPE,
+  WOOD_TYPE,
+}
+
+export default {
+  CAT_VARIANT_TYPE,
+  AXOLOTL_VARIANT_TYPE,
+  BANNER_PATTERNS_TYPE,
+  COLOR_TYPE,
+  OPERATION_TYPE,
+  SLOT_TYPE,
+  WOOD_TYPE,
+}

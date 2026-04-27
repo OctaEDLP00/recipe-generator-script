@@ -5,7 +5,7 @@ import {
   COLOR_TYPE,
   OPERATION_TYPE,
   SLOT_TYPE,
-} from './const'
+} from './const/index'
 
 declare global {
   export namespace UtilityTypes {
@@ -22,7 +22,7 @@ declare global {
 
   export namespace CLI {
     export interface Opts {
-      out?: string
+      out: string
       dry?: boolean
       template: ''
     }
@@ -40,15 +40,15 @@ declare global {
     export type IngredientSlot = Array<string | Tag>
 
     export type IngredientsSlotTuple = [
-      IngredientSlot,
-      IngredientSlot,
-      IngredientSlot,
-      IngredientSlot,
-      IngredientSlot,
-      IngredientSlot,
-      IngredientSlot,
-      IngredientSlot,
-      IngredientSlot,
+      IngredientSlot?,
+      IngredientSlot?,
+      IngredientSlot?,
+      IngredientSlot?,
+      IngredientSlot?,
+      IngredientSlot?,
+      IngredientSlot?,
+      IngredientSlot?,
+      IngredientSlot?,
     ]
 
     export type Ingredient = IngredientSlot | IngredientsSlotTuple
@@ -56,13 +56,11 @@ declare global {
     export interface Result {
       id: string
       count: number
+      components?: Components
     }
 
     export interface ResultShaped extends Result {}
-
-    export interface ResultShapeless extends Result {
-      components?: Components
-    }
+    export interface ResultShapeless extends Result {}
 
     export interface CraftRecipe<Result> {
       group?: Group
@@ -84,9 +82,11 @@ declare global {
 
     export type Recipe = CraftingShaped | CraftingShapeless
 
-    type Pattern = (typeof BANNER_PATTERNS_TYPE)[keyof typeof BANNER_PATTERNS_TYPE]
+    export type RecipeType = 'stairs' | 'slab' | 'trapdoor' | 'stick' | ''
 
-    type Color = (typeof COLOR_TYPE)[keyof typeof COLOR_TYPE]
+    export type Pattern = (typeof BANNER_PATTERNS_TYPE)[keyof typeof BANNER_PATTERNS_TYPE]
+
+    export type Color = (typeof COLOR_TYPE)[keyof typeof COLOR_TYPE]
 
     export interface Components {
       additional_trade_cost?: number
