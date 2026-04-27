@@ -4,8 +4,6 @@ import { argv } from 'node:process'
 import meow from 'meow'
 // import * as Project from './src/index.js'
 
-const args = argv.slice(2)
-
 const cli = meow(
   `
   Usage

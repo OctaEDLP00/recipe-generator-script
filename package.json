@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "author": "OCtaEDLP00",
-  "bin": "./script.ts",
+  "bin": {
+    "recipe-generator": "./script.ts"
+  },
   "dependencies": {
     "zod": "4.3.6",
     "meow": "14.1.0"
